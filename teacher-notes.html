@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CampusPro - Teacher · Notes</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/css/styles.css" rel="stylesheet">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container-fluid">
+      <a class="navbar-brand fw-bold" href="index.html"><i class="bi bi-mortarboard-fill me-2"></i>CampusPro</a>
+      <div class="navbar-nav">
+        <a class="nav-link" href="index.html"><i class="bi bi-house-door"></i> Home</a>
+        <a class="nav-link" href="admin.html"><i class="bi bi-shield-lock"></i> Admin</a>
+        <a class="nav-link active" href="teacher-notes.html"><i class="bi bi-person-gear"></i> Teacher</a>
+        <a class="nav-link" href="student.html"><i class="bi bi-mortarboard"></i> Student</a>
+        <a class="nav-link" href="announcements.html"><i class="bi bi-mortarboard"></i> Announcements</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container py-4">
+    <h3 class="mb-2"><i class="bi bi-journal-text"></i> Teacher · Notes</h3>
+    <ul class="nav nav-pills small mb-3">
+      <li class="nav-item"><a class="nav-link" href="teacher-students.html">Students</a></li>
+      <li class="nav-item"><a class="nav-link active" href="teacher-notes.html">Notes</a></li>
+      <li class="nav-item"><a class="nav-link" href="teacher-results.html">Results</a></li>
+      <li class="nav-item"><a class="nav-link" href="teacher-attendance.html">Attendance</a></li>
+      <li class="nav-item"><a class="nav-link" href="teacher-tests.html">Tests</a></li>
+      <a class="nav-link active" href="teacher-announcement.html"><i class="bi bi-megaphone-fill"></i> Teacher Announcement</a>
+      <li class="nav-item ms-auto"><a class="nav-link" href="teacher.html">All-in-one</a></li>
+    </ul>
+
+    <div class="card shadow-sm mb-3">
+      <div class="card-body row g-2 align-items-end">
+        <div class="col-md-3">
+          <label class="form-label">Teacher ID</label>
+          <input id="teacher-id" class="form-control" placeholder="tchr-1001" />
+        </div>
+        <div class="col-md-3">
+          <label class="form-label">Class ID</label>
+          <input id="teacher-class-id" class="form-control" placeholder="cls-8A" />
+        </div>
+        <div class="col-md-3 d-grid">
+          <button id="btnTeacherLoad" class="btn btn-primary"><i class="bi bi-box-arrow-in-right"></i> Load</button>
+        </div>
+        <div class="col-md-3 d-grid">
+          <button id="btnTeacherLogout" class="btn btn-outline-danger d-none"><i class="bi bi-box-arrow-right"></i> Logout</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="teacher-workspace" class="d-none">
+      <div class="row g-3">
+        <div class="col-12">
+          <div class="card shadow-sm">
+            <div class="card-header"><i class="bi bi-journal-text"></i> Notes</div>
+            <div class="card-body">
+              <div class="row g-2 align-items-end mb-3">
+                <div class="col-md-4 d-grid">
+                  <button id="btnUploadPdf" class="btn btn-primary"><i class="bi bi-file-earmark-pdf"></i> Upload PDF</button>
+                </div>
+                <div class="col-md-4 d-grid">
+                  <button id="btnUploadWord" class="btn btn-secondary"><i class="bi bi-file-earmark-word"></i> Upload Word</button>
+                </div>
+                <div class="col-md-4 small text-muted" id="uploadProgress"></div>
+              </div>
+              <div class="row g-2">
+                <div class="col-md-5"><input id="note-title" class="form-control" placeholder="Title" /></div>
+                <div class="col-md-5"><input id="note-link" class="form-control" placeholder="URL (Google Drive, etc.)" /></div>
+                <div class="col-md-2 d-grid"><button id="btnAddNote" class="btn btn-secondary"><i class="bi bi-plus-circle"></i> Add</button></div>
+              </div>
+              <ul id="notes-list" class="list-group list-group-flush mt-2"></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://ucarecdn.com/libs/widget/3.x/uploadcare.full.min.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
